@@ -29,6 +29,7 @@ fetch(URL, {
         cardBody.classList.add("card-body");
 
         const titleCard = document.createElement("h5");
+        titleCard.classList.add("lessWord");
         titleCard.classList.add("card-title");
         titleCard.innerText = prod.name;
 
@@ -43,7 +44,7 @@ fetch(URL, {
         const moreDetailsButton = document.createElement("a");
         moreDetailsButton.classList.add("btn");
         moreDetailsButton.classList.add("btn-primary");
-        moreDetailsButton.innerText = "Dettagli";
+        moreDetailsButton.innerText = "Scopri di più";
         moreDetailsButton.href = `./details.html?prodId=${prod._id}`;
 
         const buttonPriceDiv = document.createElement("div");
