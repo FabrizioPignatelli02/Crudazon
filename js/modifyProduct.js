@@ -68,3 +68,30 @@ loadProductForm.addEventListener("submit", (e) => {
       </div>`;
     });
 });
+
+const deleteProductButton = document.getElementById("deleteProductButton");
+
+deleteProductButton.addEventListener("click", (e) => {
+  e.preventDefault();
+
+  fetch(newURL, {
+    method: "DELETE",
+    headers: {
+      Authorization:
+        "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTRkZTU4ZDI1NGU4ODAwMTgzZjE4NmMiLCJpYXQiOjE2OTk2MDM4NTQsImV4cCI6MTcwMDgxMzQ1NH0.voYIB8BUS-aIn_0J_TrrOROZE6qNXWZlJ2RcOo_yIX4",
+      "Content-Type": "application/json",
+    },
+  })
+    .then((resp) => resp.json())
+    .then(() => {
+      alertContainer.innerHTML = `<div class="alert alert-danger w-75 mt-5" role="alert">
+    Prodotto cancellato con successo
+  </div>`;
+
+      document.getElementById("nameProduct").value = "";
+      document.getElementById("descriptionProduct").value = "";
+      document.getElementById("brandProduct").value = "";
+      document.getElementById("imageProduct").value = "";
+      document.getElementById("priceProduct").value = "";
+    });
+});
