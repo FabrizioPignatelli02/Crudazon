@@ -1,5 +1,9 @@
 const container = document.getElementById("container");
 
+const params = new URLSearchParams(window.location.search);
+const prodId = params.get("prodId");
+console.log(prodId);
+
 const URL = "https://striveschool-api.herokuapp.com/api/product/";
 
 fetch(URL, {
@@ -47,6 +51,13 @@ fetch(URL, {
         moreDetailsButton.innerText = "Scopri di più";
         moreDetailsButton.href = `./details.html?prodId=${prod._id}`;
 
+        const modifyProdButton = document.createElement("a");
+        modifyProdButton.classList.add("mx-4");
+        modifyProdButton.classList.add("btn");
+        modifyProdButton.classList.add("btn-success");
+        modifyProdButton.innerText = "✏️";
+        modifyProdButton.href = `./modifyProduct.html?prodId=${prod._id}`;
+
         const buttonPriceDiv = document.createElement("div");
         buttonPriceDiv.classList.add("mx-auto");
 
@@ -55,6 +66,7 @@ fetch(URL, {
         cardBody.appendChild(buttonPriceDiv);
         buttonPriceDiv.appendChild(priceCard);
         buttonPriceDiv.appendChild(moreDetailsButton);
+        buttonPriceDiv.appendChild(modifyProdButton);
 
         divCard.appendChild(imageProduct);
         divCard.appendChild(cardBody);

@@ -24,13 +24,6 @@ window.onload = () => {
       const divInfo = document.createElement("div");
       divInfo.classList.add("col-6");
 
-      const modifyProdButton = document.createElement("a");
-      modifyProdButton.classList.add("fs-3");
-      modifyProdButton.classList.add("btn");
-      modifyProdButton.classList.add("btn-success");
-      modifyProdButton.innerText = "✏️";
-      modifyProdButton.href = `./modifyProduct.html?prodId=${prodId}`;
-
       const imageProduct = document.createElement("img");
       imageProduct.classList.add("w-100");
       imageProduct.classList.add("imageDetail");
@@ -49,7 +42,6 @@ window.onload = () => {
       divInfo.appendChild(titleCard);
       divInfo.appendChild(descriptionCard);
       divInfo.appendChild(priceCard);
-      divInfo.appendChild(modifyProdButton);
 
       row.appendChild(divImage);
       row.appendChild(divInfo);
