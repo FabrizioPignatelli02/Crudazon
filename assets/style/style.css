@@ -1,0 +1,26 @@
+#logoCrudazon{
+    width: 4rem;
+}
+
+.card{
+    width: 18rem;
+    box-shadow: 0 0 30px black;
+}
+
+.card img{
+    height: 12rem;
+    object-fit: cover;
+}
+
+.lessWord{
+    --max-lines: 1; 
+    overflow: hidden;
+     
+    display: -webkit-box; 
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: var(--max-lines);
+}
+
+.imageDetail{
+    object-fit: cover;
+}
